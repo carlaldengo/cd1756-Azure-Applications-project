@@ -24,6 +24,11 @@
                 <td>{{ post.author }}</td>
                 <td>{{ post.image_path != None }}</td>
                 <td><a href="{{ url_for('post', id=post.id) }}">Edit Post</a></td>
+                <td>
+                    <form action="{{ url_for('delete_post', id=post.id) }}" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
             </tr>
             {% endfor %}
         </table>
